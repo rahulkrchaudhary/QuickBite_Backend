@@ -27,6 +27,8 @@ public class PasswordResetToken {
 //    public boolean isExpired(){
 //        return expiryDate.before(new Date());
 //    }
+
+    @Column(columnDefinition = "DATETIME")
     private @NonNull LocalDateTime expiryDate;
 
     public boolean isExpired(){

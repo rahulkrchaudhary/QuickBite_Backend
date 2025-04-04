@@ -50,9 +50,11 @@ public class AppConfig {
             public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
                 CorsConfiguration cfg= new CorsConfiguration();
                 cfg.setAllowedOrigins(Arrays.asList(
-                        "https://quickbite-black.vercel.app/",
-                        frontedUrl
-//                        "http://localhost:3000/"
+//                        "https://quickbite-black.vercel.app/",
+//                        "https://quickbite-eta-nine.vercel.app/",
+//                        "https://quickbite-rahulkrchaudhary-project.vercel.app/",
+                        frontedUrl,
+                        "http://localhost:3000/"
                 ));
 //                cfg.setAllowedMethods(Collections.singletonList("*"));
 //                cfg.setAllowCredentials(true);
