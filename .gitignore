@@ -1,0 +1,40 @@
+# Spring Boot specific
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Common build directories (should be ignored)
+**/target/
+**/build/
+
+# Ignore .env files (secrets)
+.env
+
+# STS (Spring Tool Suite)
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+
+# OS/Editor artifacts
+.DS_Store
+Thumbs.db
