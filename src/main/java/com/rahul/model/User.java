@@ -15,6 +15,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "app_user") // renamed here
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

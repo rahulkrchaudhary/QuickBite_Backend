@@ -26,12 +26,12 @@ public class Payment {
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(nullable = false, updatable = false, columnDefinition = "DATETIME")  // ✅ Force DATETIME without (6)
+//    @Column(nullable = false, updatable = false, columnDefinition = "DATETIME")  // ✅ Force DATETIME without (6)
     private Date createdAt;
 
     @UpdateTimestamp
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(columnDefinition = "DATETIME")  // ✅ Ensure correct type
+//    @Column(columnDefinition = "DATETIME")  // ✅ Ensure correct type
     private Date updatedAt;
 
 

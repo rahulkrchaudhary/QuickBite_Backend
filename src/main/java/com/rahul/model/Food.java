@@ -40,9 +40,9 @@ public class Food {
     @ManyToMany
     private List<IngredientsItem> ingredients= new ArrayList<>();
 
-//    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.TIMESTAMP)
 //    private Date creationDate = new Date();
-//    private Date creationDate;
+    private Date creationDate;
 
 //    @CreationTimestamp
 //    private LocalDateTime creationDate;
@@ -55,10 +55,10 @@ public class Food {
 //        this.creationDate = LocalDateTime.now();
 //    }
 
-    @CreationTimestamp
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(nullable = false, updatable = false, columnDefinition = "DATETIME")  // ✅ Force DATETIME without (6)
-    private Date creationDate;
+//    @CreationTimestamp
+//    @Temporal(TemporalType.TIMESTAMP)
+//    @Column(nullable = false, updatable = false)  // ✅ Force DATETIME without (6)
+//    private Date creationDate;
 
 
 

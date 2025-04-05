@@ -34,7 +34,7 @@ public class FoodServiceImp implements FoodService{
         food.setCreationDate(new Date());
 //        food.setCreationDate();
 
-//        food.setCreationDate(new LocalDaeTime());
+//        food.setCreationDate(new LocalDate);
         Food savedFood=foodRepository.save(food);
         restaurant.getFoods().add(savedFood);
         return savedFood;

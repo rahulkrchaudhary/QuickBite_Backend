@@ -56,8 +56,8 @@ public class UserServiceImp implements UserService{
     public void sendPasswordResetEmail(User user) {
 
         String resetToken = generateRandomToken();
-//        Date expiryDate = calculateExpiryDate();
-        LocalDateTime expiryDate = calculateExpiryDate();
+        Date expiryDate = calculateExpiryDate();
+//        LocalDateTime expiryDate = calculateExpiryDate();
 
 
         PasswordResetToken passwordResetToken = new PasswordResetToken();
@@ -84,15 +84,15 @@ public class UserServiceImp implements UserService{
         javaMailSender.send(simpleMailMessage);
     }
 
-//    private Date calculateExpiryDate() {
-//        Calendar calendar = Calendar.getInstance();
-//        calendar.setTime(new Date());
-//        calendar.add(Calendar.MINUTE, 10);
-//        return calendar.getTime();
-//    }
-    private LocalDateTime calculateExpiryDate() {
-        return LocalDateTime.now().plusMinutes(10); // Expiry in 10 minutes
+    private Date calculateExpiryDate() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        calendar.add(Calendar.MINUTE, 10);
+        return calendar.getTime();
     }
+//    private LocalDateTime calculateExpiryDate() {
+//        return LocalDateTime.now().plusMinutes(10); // Expiry in 10 minutes
+//    }
 
 
     private String generateRandomToken() {

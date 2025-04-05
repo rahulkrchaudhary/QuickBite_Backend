@@ -31,15 +31,15 @@ public class Order {
     private Long totalAmount;
     private String orderStatus;
 
-//    @Temporal(TemporalType.TIMESTAMP)
-//    private Date createdAt;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdAt;
 
 //    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
 //    private LocalDateTime createdAt;
-    @CreationTimestamp
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(nullable = false, updatable = false, columnDefinition = "DATETIME")  // ✅ Force DATETIME without (6)
-    private Date createdAt;
+//    @CreationTimestamp
+//    @Temporal(TemporalType.TIMESTAMP)
+//    @Column(nullable = false, updatable = false, columnDefinition = "DATETIME")  // ✅ Force DATETIME without (6)
+//    private Date createdAt;
 
 //    @PrePersist
 //    public void setCreatedAt() {
