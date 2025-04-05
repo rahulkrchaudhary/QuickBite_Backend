@@ -41,24 +41,8 @@ public class Food {
     private List<IngredientsItem> ingredients= new ArrayList<>();
 
     @Temporal(TemporalType.TIMESTAMP)
-//    private Date creationDate = new Date();
     private Date creationDate;
 
-//    @CreationTimestamp
-//    private LocalDateTime creationDate;
-
-//    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-//    private LocalDateTime creationDate;
-//
-//    @PrePersist
-//    public void setCreationDate() {
-//        this.creationDate = LocalDateTime.now();
-//    }
-
-//    @CreationTimestamp
-//    @Temporal(TemporalType.TIMESTAMP)
-//    @Column(nullable = false, updatable = false)  // ✅ Force DATETIME without (6)
-//    private Date creationDate;
 
 
 

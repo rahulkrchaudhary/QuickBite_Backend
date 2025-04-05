@@ -34,22 +34,9 @@ public class Order {
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
 
-//    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-//    private LocalDateTime createdAt;
-//    @CreationTimestamp
-//    @Temporal(TemporalType.TIMESTAMP)
-//    @Column(nullable = false, updatable = false, columnDefinition = "DATETIME")  // ✅ Force DATETIME without (6)
-//    private Date createdAt;
-
-//    @PrePersist
-//    public void setCreatedAt() {
-//        this.createdAt = LocalDateTime.now();
-//    }
-
     @ManyToOne
     private Address deliveryAddress;
 
-//    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     @OneToMany
     private List<OrderItem> items;
 

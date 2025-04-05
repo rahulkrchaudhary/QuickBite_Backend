@@ -31,7 +31,6 @@ public class CategoryServiceImp implements CategoryService{
     public List<Category> findCategoryByRestaurantId(Long id) throws Exception {
 //        Restaurant restaurant=restaurantService.getRestaurantByUserId(id);
         Restaurant restaurant=restaurantService.findRestaurantById(id);
-//        if(restaurant==nu)
         return categoryRepository.findByRestaurantId(id);
     }
 

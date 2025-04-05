@@ -23,7 +23,5 @@ public class OrderItem {
     private Long totalPrice;
     private List<String> ingredients;
 
-//    @ManyToOne
-//    private Order order;
 
 }

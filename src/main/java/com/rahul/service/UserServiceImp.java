@@ -6,6 +6,7 @@ import com.rahul.model.User;
 import com.rahul.repository.PasswordResetTokenRepository;
 import com.rahul.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.mail.SimpleMailMessage;
@@ -29,6 +30,9 @@ public class UserServiceImp implements UserService{
     private PasswordResetTokenRepository passwordResetTokenRepository;
     @Autowired
     private JavaMailSender javaMailSender;
+
+    @Value("${fronted.url}")
+    private String frontedUrl;
 
     @Override
     public User findUserByJwtToken(String jwt) throws Exception {
@@ -67,8 +71,11 @@ public class UserServiceImp implements UserService{
 
         passwordResetTokenRepository.save(passwordResetToken);
 
-        sendEmail(user.getEmail(), "Password Reset", "Click the following link to reset your password: http://localhost:3000/account/reset-password?token=" + resetToken);
-
+        sendEmail(
+                user.getEmail(),
+                "Password Reset",
+                "Click the following link to reset your password: " + frontedUrl + "/account/reset-password?token=" + resetToken
+        );
 
 
     }
@@ -90,9 +97,6 @@ public class UserServiceImp implements UserService{
         calendar.add(Calendar.MINUTE, 10);
         return calendar.getTime();
     }
-//    private LocalDateTime calculateExpiryDate() {
-//        return LocalDateTime.now().plusMinutes(10); // Expiry in 10 minutes
-//    }
 
 
     private String generateRandomToken() {
@@ -101,7 +105,6 @@ public class UserServiceImp implements UserService{
 
     @Override
     public void deleteUser(Long id) {
-//        User user =
         userRepository.deleteById(id);
     }
 

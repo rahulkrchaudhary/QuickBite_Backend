@@ -29,14 +29,17 @@ public class PaymentServiceImp implements PaymentService{
     @Value("${stripe.api.key}")
     private String stripeSecretKey;
 
+    @Value("${fronted.url}")
+    private String frontedUrl;
+
     @Override
     public PaymentResponse createPaymentLink(Order order) {
         Stripe.apiKey=stripeSecretKey;
         SessionCreateParams params=SessionCreateParams.builder()
                 .addPaymentMethodType(SessionCreateParams.PaymentMethodType.CARD)
                 .setMode(SessionCreateParams.Mode.PAYMENT)
-                .setSuccessUrl("http://localhost:3000/payment/success/"+order.getId())
-                .setCancelUrl("http://localhost:3000/payment/fail")
+                .setSuccessUrl(frontedUrl+"/payment/success/"+order.getId())
+                .setCancelUrl(frontedUrl+"/payment/fail")
                 .addLineItem(SessionCreateParams.LineItem.builder()
                         .setQuantity(1L)
                         .setPriceData(SessionCreateParams.LineItem.PriceData.builder()

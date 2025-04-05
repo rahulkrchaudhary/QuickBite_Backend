@@ -28,9 +28,7 @@ public class Restaurant {
     private String description;
     private String cuisineType;
 
-//    @OneToOne
     @ManyToOne
-//    @JoinColumn(name = "address_id")
     private Address address;
 
     @Embedded

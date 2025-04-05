@@ -26,9 +26,9 @@ public class PaymentController {
     @GetMapping("/payment")
     public ResponseEntity<List<Payment>> getAllUserPayment(@RequestHeader("Authorization") String jwt) throws Exception {
         User user = userService.findUserByJwtToken(jwt);
-        System.out.println("--------------------" + user.getId());
+//        System.out.println("--------------------" + user.getId());
         List<Payment> paymentList = paymentService.findPaymentByUser(user);
-        System.out.println("---------size"+ paymentList.size());
+//        System.out.println("---------size"+ paymentList.size());
 //        System.out.println("----------------we got list"+paymentList);
         return new ResponseEntity<>(paymentList, HttpStatus.OK);
     }
